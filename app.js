@@ -11,7 +11,7 @@ const flash=require('connect-flash');
 const LocalStrategy=require('passport-local').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const {mongoDbUrl}=require('./config/Database.js')
+const {mongoDbUrl}=require('./config/database.js')
 const upload=require('express-fileupload');
 
 
