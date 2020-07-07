@@ -1,6 +1,6 @@
 const express=require('express');
-const Post=require('../../models/posts.js');
-const Comment=require('../../models/comments.js');
+const Post=require('../../models/Posts.js');
+const Comment=require('../../models/Comments.js');
 const {userAuthenticated}=require('../../helpers/authentication.js');
 const router=express.Router();
 

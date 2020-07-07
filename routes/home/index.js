@@ -1,7 +1,7 @@
 const express=require('express');
 const router=express.Router();
 //const faker=require('faker');
-const Post=require('../../models/posts.js');
+const Post=require('../../models/Posts.js');
 //const Category=require('../../models/categories.js');
 //const Comment=require('../../models/comments.js');
 //const User=require('../../models/User.js');

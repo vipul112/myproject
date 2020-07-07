@@ -1,6 +1,6 @@
 const express=require('express');
 const router=express.Router();
-const Post=require('../../models/posts.js');
+const Post=require('../../models/Posts.js');
 //const Category=require('../../models/categories.js');
 const {userAuthenticated}=require('../../helpers/authentication.js');
 
