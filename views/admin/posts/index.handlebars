@@ -1,0 +1,41 @@
+<h1> All Posts </h1>
+
+
+{{> home/form-msgs}}
+
+
+<table class="table table-bordered">
+  <thead>
+      <tr>
+          <th>ID</th>
+          <th>File</th>
+          <th>Title</th>
+          <th>Status</th>
+          <th>allowComments</th>
+          <!--<th>Category</th>-->
+          <!--<th>Post</th>-->
+          <th>Date</th>
+      </tr>
+  </thead>
+  <tbody>
+    {{#each posts}}
+    <tr>
+      <td>{{id}}</td>
+      <td><img height="60px" src="/uploads/{{file}}"></td>
+      <td>{{title}}</td>
+      <td>{{status}}</td>
+      <td>{{allowComments}}</td>
+      <!--<td>{{category.name}}</td>-->
+      <td><a href="/home/post/{{id}}">View</a></td>
+      <td>{{date}}</td>
+
+      <!--<td><a href='/admin/posts/edit/{{id}}' class="btn btn-info">Edit</a></td>
+      <td>
+          <form action="/admin/posts/{{id}}?_method=DELETE" method="post">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+      </td>-->
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

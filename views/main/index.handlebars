@@ -1,0 +1,25 @@
+<div class="content">
+	<div class="title">Create account</div>
+	{{>main/form-msgs-admin}}
+	<form action="/signup" method="post">
+	<input type="email" placeholder="E-mail" name="email" required />
+	<input type="password" placeholder="Password" name="password" required />
+	 <input type="password" placeholder="Confirm Password" name="confirmPassword" required />
+	<input type="checkbox" id="rememberMe"/>
+	<label for="rememberMe">
+		<input type="checkbox" name="rememberMe">
+	</label><span>I have read and agree to the <a href="#">Terms of Use </a>and <a href="#">Privacy Policy</a></span>
+	<button type="submit">Create Account</button>
+</form>
+	<div class="social"> <span>or sign up with social media</span></div>
+	<center>
+	<div class="buttons">
+		<button class="facebook"><i class="fa fa-facebook"></i><a href="/auth/facebook">Facebook</a></button>
+		<!--<button class="twitter"><i class="fa fa-twitter"></i>Twitter</button>-->
+		<button class="google"><i class="fa fa-google-plus"></i><a href="/auth/google">Google</a></button>
+		</div>
+	</center>
+		<div class="already">Already have an account? <a href="/loginpage">Sign In</a></div>
+
+
+</div>
