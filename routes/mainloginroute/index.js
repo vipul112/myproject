@@ -78,7 +78,7 @@ router.get('/logout',(req,res)=>{
 var facebookAuth = {
         'clientID'        : '313732185721366', // facebook App ID
         'clientSecret'    : '89c6c065f690a779a2cffbad7b572f0f', // facebook App Secret
-        "callbackURL"   : 'https://myprojectvipul.herokuapp.com/auth/facebook/callback'
+        "callbackURL"   : 'https://myprojectvipul.herokuapp.com/auth/facebook/callback',
         //'callbackURL'     : 'http://localhost:4800/auth/facebook/callback',
         'profileURL'    : 'https://graph.facebook.com/v2.5/me?fields=first_name,last_name,email',
         'profileFields' : ['id', 'email', 'name'] // For requesting permissions from Facebook API
