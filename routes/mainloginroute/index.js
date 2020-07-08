@@ -152,8 +152,8 @@ router.get("/auth/facebook/callback",
 var googleAuth = {
         "clientID"      : '16117043997-h1pvdgvcps0n69stqcfpg7tvc2b9jnu8.apps.googleusercontent.com',
         "clientSecret"  : 'UvwEwPzz7ipEqfNQxB5-U4j4',
-        "callbackURL"   : 'https://myprojectvipul.herokuapp.com/auth/google/callback'
-        //"callbackURL"   : 'http://localhost:4800/auth/google/callback'
+        //"callbackURL"   : 'https://myprojectvipul.herokuapp.com/auth/google/callback'
+        "callbackURL"   : 'http://localhost:4800/auth/google/callback'
     };
     passport.use(new GoogleStrategy({
 
