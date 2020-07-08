@@ -79,7 +79,7 @@ app.use('/admin/comments',comments);
 
 
 
-var port = process.env.PORT | 3000;
+var port = process.env.PORT || 3000;
 app.listen(port,'0.0.0.0',()=>{
   console.log(`listening to port `+port);
 });/*
