@@ -3,7 +3,7 @@
 
 {{> home/form-msgs}}
 
-
+<div class ="table-responsive">
 <table class="table table-bordered">
   <thead>
       <tr>
@@ -25,7 +25,7 @@
       <td>{{title}}</td>
       <td>{{status}}</td>
       <td>{{allowComments}}</td>
-      <td>{{category.name}}</td>
+      <!--<td>{{category.name}}</td>-->
       <td><a href="/home/post/{{id}}">View</a></td>
       <td>{{date}}</td>
 
@@ -39,3 +39,4 @@
     {{/each}}
   </tbody>
 </table>
+</div>
