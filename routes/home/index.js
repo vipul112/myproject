@@ -3,8 +3,8 @@ const router=express.Router();
 //const faker=require('faker');
 const Post=require('../../models/Posts.js');
 //const Category=require('../../models/categories.js');
-//const Comment=require('../../models/comments.js');
-//const User=require('../../models/User.js');
+const Comment=require('../../models/comments.js');
+const User=require('../../models/User.js');
 const {userAuthenticated}=require('../../helpers/authentication.js');
 router.all('/*',userAuthenticated,(req,res,next)=>{
 
