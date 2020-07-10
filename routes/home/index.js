@@ -17,6 +17,24 @@ router.get('/',(req,res)=>{
     res.render('home/index',{posts: posts});
   })
 
+  router.get('/about',(req,res)=>{
+    Post.countDocuments({}).then(counteddocs=>{
+      Comment.countDocuments({}).then(countedcoms=>{
+        User.countDocuments({}).then(counteduser=>{
+          res.render('home/about',{counteddocs:counteddocs,countedcoms:countedcoms,counteduser:counteduser});
+        });
+
+
+      });
+
+    });
+  });
+
+  router.get('/contact',(req,res)=>{
+    res.render('home/contact');
+  });
+
+
 });
 
 router.get('/post/:id',(req,res)=>{
