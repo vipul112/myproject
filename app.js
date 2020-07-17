@@ -13,6 +13,7 @@ const FacebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const {mongoDbUrl}=require('./config/database.js')
 const upload=require('express-fileupload');
+var cloudinary = require('cloudinary').v2;
 
 
 //const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
@@ -37,6 +38,12 @@ app.use(upload());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+//cloudinary
+cloudinary.config({
+  cloud_name: 'dze3yrgrm',
+  api_key: '712468738164853',
+  api_secret: 'qWFY6DfALvi5iem1SAPb0T79ugE'
+});
 
 //METHOD override
 app.use(methodOverride('_method'));

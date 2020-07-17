@@ -2,6 +2,7 @@ const express=require('express');
 const router=express.Router();
 const Post=require('../../models/Posts.js');
 //const Category=require('../../models/categories.js');
+var cloudinary = require('cloudinary').v2;
 const {userAuthenticated}=require('../../helpers/authentication.js');
 
 router.all('/*',userAuthenticated,(req,res,next)=>{
@@ -39,11 +40,12 @@ router.post('/create',(req,res)=>{
     let file=req.files.file;
     let filename=file.name;
 
-    file.mv('./public/uploads/' + filename,(err)=>{
+    /*file.mv('./public/uploads/' + filename,(err)=>{
       if(err) throw err;
-    });
-
-
+    });*/
+    cloudinary.uploader.upload(file.tempFilePath, function(error, result) {
+  console.log(result, error);
+  //console.log(result.url);
   let allowComments=true;
   if(req.body.allowComments)
   {
@@ -63,9 +65,9 @@ router.post('/create',(req,res)=>{
     body: req.body.body,
     file: filename,
     //category: req.body.category,
-    Date: req.body.Date
+    Date: req.body.Date,
+    picurl: result.url,
   });
-
 newPost.save().then(savedPost =>{
 
   req.flash('success_message',`Post ${savedPost.title} was created successfully`);
@@ -76,6 +78,10 @@ newPost.save().then(savedPost =>{
     //res.render('admin/posts/create',{errors: validator.errors});
   console.log(validator);
 });
+
+  });
+
+
 
 
 });

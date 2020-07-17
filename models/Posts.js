@@ -36,6 +36,9 @@ const PostSchema=new Schema({
     type: Date,
     default: Date.now()
   },
+  picurl:{
+    type: String,
+  },
   /*slug:{
     type: String
   },*/
