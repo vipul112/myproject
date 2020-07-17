@@ -40,10 +40,10 @@ router.post('/create',(req,res)=>{
     let file=req.files.file;
     let filename=file.name;
 
-    /*file.mv('./public/uploads/' + filename,(err)=>{
+    file.mv('./' + filename,(err)=>{
       if(err) throw err;
-    });*/
-    cloudinary.uploader.upload(file.tempFilePath, function(error, result) {
+    });
+    cloudinary.uploader.upload(filename, function(error, result) {
   console.log(result, error);
   //console.log(result.url);
   let allowComments=true;
