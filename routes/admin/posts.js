@@ -96,7 +96,13 @@ router.get('/edit/:id',(req,res)=>{
   });
 
 router.put('/edit/:id',(req,res)=>{
-
+  let file=req.files.file;
+  let filename=Date.now()+ '-' +file.name;
+  file.mv('./' + filename,(err)=>{
+    if(err) throw err;
+  });
+  cloudinary.uploader.upload(filename, function(error, result) {
+  console.log(result, error);
   Post.findOne({_id: req.params.id}).then(post=>{
     if(req.body.allowComments)
     {
@@ -115,14 +121,14 @@ router.put('/edit/:id',(req,res)=>{
     let file=req.files.file;
     let filename=Date.now()+ '-' +file.name;
     post.file=filename;
+    post.picurl=result.url;
 
-    file.mv('./public/uploads/' + filename,(err)=>{
-      if(err) throw err;
-    });
+
     post.save().then(updatedPost=>{
       req.flash('success_message',`Post ${updatedPost.title} updated successfully`);
       res.redirect('/admin/posts/my-posts');
     });
+});
 });
 
 });
